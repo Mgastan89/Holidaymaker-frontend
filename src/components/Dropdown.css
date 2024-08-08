@@ -1,0 +1,21 @@
+/* src/components/Dropdown.css */
+.dropdown {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 10px; /* Space between the link and the dropdown */
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ddd;
+  }
+  
