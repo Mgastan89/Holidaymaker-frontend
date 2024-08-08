@@ -1,5 +1,9 @@
 # HolidayMaker
 
+## Backend Repository
+
+[HolidayMaker Backend](https://github.com/Mgastan89/HolidayMaker-Backend)
+
 HolidayMaker is a web application that allows users to register, log in, and book activities in different cities or places. The application is built using React for the frontend and Spring Boot for the backend.
 
 ## Table of Contents
@@ -18,8 +22,8 @@ HolidayMaker is a web application that allows users to register, log in, and boo
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/holidaymaker.git
-    cd holidaymaker/backend
+    git clone https://github.com/Mgastan89/HolidayMaker-Backend.git
+    cd HolidayMaker-Backend
     ```
 
 2. Set up the database:
@@ -133,4 +137,3 @@ HolidayMaker is a web application that allows users to register, log in, and boo
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-Link to the Backend : 
