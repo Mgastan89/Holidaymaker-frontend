@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# HolidayMaker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HolidayMaker is a web application that allows users to register, log in, and book activities in different cities or places. The application is built using React for the frontend and Spring Boot for the backend.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/holidaymaker.git
+    cd holidaymaker/backend
+    ```
 
-### `npm test`
+2. Set up the database:
+    - Ensure you have MySQL installed and running.
+    - Create a database named `holidaymaker`.
+    - Update `application.properties` with your database credentials.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Build and run the Spring Boot application:
+    ```sh
+    mvn clean install
+    mvn spring-boot:run
+    ```
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the frontend directory:
+    ```sh
+    cd ../frontend
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Run the React application:
+    ```sh
+    npm start
+    ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register a new user or log in with existing credentials.
+3. Explore activities and places.
+4. Book activities and view your bookings.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### User Endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Register**: `POST /api/users/register`
+    - Request body: 
+      ```json
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "username": "johndoe",
+        "password": "password",
+        "userType": "BASIC",
+        "address": {
+          "street": "123 Main St",
+          "city": "Anytown",
+          "state": "CA",
+          "postalCode": "12345"
+        }
+      }
+      ```
 
-## Learn More
+- **Login**: `POST /api/users/login`
+    - Request body:
+      ```json
+      {
+        "username": "johndoe",
+        "password": "password"
+      }
+      ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Activity Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Get all activities**: `GET /api/activities`
+- **Get activity by ID**: `GET /api/activities/{id}`
 
-### Code Splitting
+### Place Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Get all places**: `GET /api/places`
+- **Get place by ID**: `GET /api/places/{id}`
 
-### Analyzing the Bundle Size
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- User registration and login
+- Activity and place browsing
+- Activity booking
+- User profile management
 
-### Making a Progressive Web App
+## Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Frontend**: React, CSS
+- **Backend**: Spring Boot, Java, MySQL
+- **Build Tools**: Maven
+- **Other Libraries**: Lombok, React Router, react-slick
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository.
+2. Create your feature branch:
+    ```sh
+    git checkout -b feature/my-new-feature
+    ```
+3. Commit your changes:
+    ```sh
+    git commit -m 'Add some feature'
+    ```
+4. Push to the branch:
+    ```sh
+    git push origin feature/my-new-feature
+    ```
+5. Open a pull request.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Link to the Backend : 
